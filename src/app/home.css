@@ -194,6 +194,11 @@
   margin-top: 0;
 }
 
+.social-row svg {
+  width: 32px;
+  height: 32px;
+}
+
 .hero-art {
   display: grid;
   gap: 14px;

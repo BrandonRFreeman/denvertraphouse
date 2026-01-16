@@ -1,6 +1,7 @@
 import Image from "next/image";
 import InventoryGrid from "@/components/InventoryGrid";
 import AgeGate from "@/components/AgeGate";
+import SocialIcon from "@/components/SocialIcon";
 import "./home.css";
 
 const heroPills = ["Glass that glows", "CBD that works", "Vapes verified", "Hookah nights"];
@@ -77,16 +78,16 @@ export default function Home() {
           </div>
           <div className="social-row top">
             <a href="https://www.instagram.com/denvertraphouse" aria-label="Instagram" target="_blank" rel="noreferrer">
-              <Image src="/instagram.svg" alt="Instagram" width={20} height={20} />
+              <SocialIcon kind="instagram" />
             </a>
             <a href="https://www.tiktok.com/@denvertraphouse" aria-label="TikTok" target="_blank" rel="noreferrer">
-              <Image src="/tiktok.svg" alt="TikTok" width={20} height={20} />
+              <SocialIcon kind="tiktok" />
             </a>
             <a href="https://x.com/DenverTrapHouse" aria-label="X" target="_blank" rel="noreferrer">
-              <Image src="/x.svg" alt="X" width={20} height={20} />
+              <SocialIcon kind="x" />
             </a>
             <a href="https://www.facebook.com/denvertraphouse" aria-label="Facebook" target="_blank" rel="noreferrer">
-              <Image src="/facebook.svg" alt="Facebook" width={20} height={20} />
+              <SocialIcon kind="facebook" />
             </a>
           </div>
         </header>
