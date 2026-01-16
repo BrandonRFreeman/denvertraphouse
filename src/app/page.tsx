@@ -43,7 +43,7 @@ const visitCards = [
   {
     title: "Talk to us",
     body: "Artists, vendors, collabs welcome. Tell us what to stock or call the shop.",
-    cta: "hello@denvertraphouse.com",
+    cta: "sales@denvertraphouse.com",
   },
 ];
 
