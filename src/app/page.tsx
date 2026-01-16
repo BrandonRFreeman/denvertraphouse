@@ -34,7 +34,7 @@ const systemPoints = [
 const visitCards = [
   {
     title: "Location",
-    body: "Denver storefront reveal coming soon. Central and parking-friendly.",
+    body: "2193 W Evans Ave, Denver, CO 80223. Parking-friendly and easy to find.",
   },
   {
     title: "Hours",
@@ -42,7 +42,7 @@ const visitCards = [
   },
   {
     title: "Talk to us",
-    body: "Artists, vendors, collabs welcome. Tell us what to stock.",
+    body: "Artists, vendors, collabs welcome. Tell us what to stock or call the shop.",
     cta: "hello@denvertraphouse.com",
   },
 ];
@@ -95,6 +95,9 @@ export default function Home() {
               </a>
               <a className="btn ghost" href="#visit">
                 See the shop plan
+              </a>
+              <a className="btn ghost" href="tel:3037895233">
+                Call 303.789.5233
               </a>
             </div>
             <div className="social-row">
@@ -195,7 +198,25 @@ export default function Home() {
           <section className="section visit" id="visit">
             <div className="section-head">
               <p className="eyebrow">Visit</p>
-              <h3>Denver storefront coming online.</h3>
+              <h3>Denver Trap House storefront.</h3>
+            </div>
+            <div className="location-block">
+              <div>
+                <p className="muted">Denver Trap House</p>
+                <h4>2193 W Evans Ave</h4>
+                <p className="muted">Denver, CO 80223</p>
+                <p className="muted">
+                  Phone: <a href="tel:3037895233">303.789.5233</a>
+                </p>
+              </div>
+              <div className="map-card">
+                <iframe
+                  title="Denver Trap House map"
+                  loading="lazy"
+                  src="https://www.google.com/maps?q=2193%20W%20Evans%20Ave%20Denver%20CO%2080223&output=embed"
+                  allowFullScreen
+                />
+              </div>
             </div>
             <div className="card-grid three">
               {visitCards.map((card) => (
