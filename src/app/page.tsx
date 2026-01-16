@@ -2,63 +2,47 @@ import Image from "next/image";
 import InventoryGrid from "@/components/InventoryGrid";
 import "./home.css";
 
-const categories = [
-  "Glass gallery",
-  "CBD + wellness",
-  "Vapes & disposables",
-  "Hookah & coal",
-  "Torches & storage",
-  "Gifts & lifestyle",
-];
+const heroPills = ["Glass that glows", "CBD that works", "Vapes verified", "Hookah nights"];
 
-const koronaHighlights = [
+const dropHighlights = [
   {
-    title: "Korona-connected",
-    body: "Inventory, pricing, and availability flow straight from KORONA POS, so your online shelf is always true to the register.",
-    tag: "API Sync",
-  },
-  {
-    title: "Marketplace ready",
-    body: "Built for carts, promos, and pickup. Flip on delivery or shipping rules once you are ready to take orders online.",
-    tag: "Checkout",
-  },
-  {
-    title: "Drops + kits",
-    body: "Feature artist collabs, terp-based bundles, and starter kits without breaking your POS flow.",
     tag: "Drops",
+    title: "Trap Kits",
+    body: "Bundles built for sesh, travel, and host mode. Limited runs with glass, torches, storage, and odor control.",
+  },
+  {
+    tag: "Local",
+    title: "Artist collabs",
+    body: "Denver and RiNo glass artists on rotation. Keep the heat in-store and online with Korona-stocked quantities.",
   },
 ];
 
-const vibeCards = [
-  {
-    title: "Neon trap aesthetic",
-    body: "Bold, playful, and a little chaotic — matching the house-with-arms mascot and Denver skyline splash.",
-    tag: "Brand",
-  },
-  {
-    title: "Budtender energy",
-    body: "Staff picks, terp-y notes, and in-store recommendations surfaced online so customers can shop with confidence.",
-    tag: "Hospitality",
-  },
-  {
-    title: "Built for night runs",
-    body: "Late-friendly vibe, quick pickup flows, and clear parking / access info once the doors open.",
-    tag: "Convenience",
-  },
+const categoryTiles = [
+  { title: "Glass gallery", body: "Headies, daily drivers, and UV-reactive pieces that belong on your shelf." },
+  { title: "Vapes & disposables", body: "Lab-verified lines and terp profiles you can actually pick." },
+  { title: "CBD + wellness", body: "Topicals, gummies, tinctures, and sleep-friendly stacks." },
+  { title: "Hookah & lifestyle", body: "Coals, hoses, torches, storage, odor control, and the finishing touches." },
+];
+
+const systemPoints = [
+  "Korona POS sync keeps pricing and stock true to the register.",
+  "Cart and checkout will run through high-risk friendly gateway (NMI/Authorize.Net).",
+  "Pickup-first flow; delivery rules optional once you’re ready.",
+  "Bundled SKUs and drops featured without breaking POS data.",
 ];
 
 const visitCards = [
   {
     title: "Location",
-    body: "Denver storefront reveal coming soon. Central, accessible, and designed to show off the art.",
+    body: "Denver storefront reveal coming soon. Central and parking-friendly.",
   },
   {
     title: "Hours",
-    body: "Night-owl friendly. Final hours go live alongside the soft opening.",
+    body: "Night-owl friendly hours posted at soft launch.",
   },
   {
     title: "Talk to us",
-    body: "Artists, vendors, and event collabs are welcome. Tell us what to stock next.",
+    body: "Artists, vendors, collabs welcome. Tell us what to stock.",
     cta: "hello@denvertraphouse.com",
   },
 ];
@@ -66,153 +50,146 @@ const visitCards = [
 export default function Home() {
   return (
     <div className="page-shell">
+      <div className="glow-layer" />
+      <div className="grid-layer" />
       <div className="container">
-        <header className="site-header">
-          <div className="brand">
-            <div className="brand-mark">
-              <Image
-                src="/trap-house-logo-sm.png"
-                alt="Denver Trap House logo"
-                width={58}
-                height={58}
-                priority
-              />
+        <header className="nav-bar">
+          <div className="brand-block">
+            <div className="brand-logo">
+              <Image src="/trap-house-logo-sm.png" alt="Denver Trap House logo" width={64} height={64} priority />
             </div>
             <div>
               <p className="eyebrow">Denver, CO</p>
-              <div className="brand-name">Denver Trap House</div>
-              <div className="tagline">Smoke shop + digital marketplace</div>
+              <h1 className="brand-title">Denver Trap House</h1>
+              <p className="muted">Smoke shop + digital marketplace</p>
             </div>
           </div>
-          <div className="header-actions">
-            <div className="pill glow">Live inventory synced with KORONA POS</div>
-            <a className="pill" href="#visit">
-              Visit soon
-            </a>
+          <div className="nav-actions">
+            <a href="#lineup">Lineup</a>
+            <a href="#drops">Drops</a>
+            <a href="#visit">Visit</a>
+            <span className="pill neon">Korona synced</span>
           </div>
         </header>
 
         <main>
           <section className="hero" id="top">
-            <div className="hero-copy">
-              <p className="eyebrow">Stoner / new-age / futuristic vibe</p>
-              <h1>Smoke shop energy with a plugged-in marketplace.</h1>
+            <div className="hero-text">
+              <p className="eyebrow">Stoner / new-age / futuristic</p>
+              <h2>Glass, vapes, CBD, and lifestyle with the loudest branding in Denver.</h2>
               <p className="lead">
-                Real-time inventory pulled from KORONA POS, matched with the neon Trap House brand. Glass, vapes, CBD,
-                hookah, and lifestyle goods that feel as loud as the art on your wall.
+                Trap House blends the in-store vibe with a Korona-powered marketplace. Real stock, real pricing, no gas
+                station energy.
               </p>
-              <div className="cta-row">
-                <a className="btn primary" href="#inventory">
-                  Shop live inventory
-                </a>
-                <a className="btn" href="#story">
-                  See the vibe
-                </a>
-              </div>
-              <div className="chips">
-                {categories.map((category) => (
-                  <span key={category}>{category}</span>
+              <div className="pill-row">
+                {heroPills.map((pill) => (
+                  <span key={pill} className="pill soft">
+                    {pill}
+                  </span>
                 ))}
               </div>
-            </div>
-
-            <div className="hero-visual">
-              <div className="floating-card">
-                <p className="eyebrow">Always-on sync</p>
-                <h3>Korona POS pipes data straight to the site.</h3>
-                <p className="muted">
-                  Inventory, pricing, and categories stream in automatically. No manual double-entry, no mismatched stock.
-                </p>
-                <div className="meta" style={{ marginTop: 12 }}>
-                  <span className="dot" />
-                  Live marketplace feed
-                </div>
+              <div className="cta-row">
+                <a className="btn primary" href="#lineup">
+                  Shop the lineup
+                </a>
+                <a className="btn ghost" href="#visit">
+                  See the shop plan
+                </a>
               </div>
-              <div className="logo-stack">
-                <div className="logo-tile">
-                  <Image
-                    src="/trap-house-logo-sm.png"
-                    alt="Trap House mascot logo"
-                    width={420}
-                    height={420}
-                    priority
-                  />
+            </div>
+            <div className="hero-art">
+              <div className="art-card">
+                <div className="badge">Live sync</div>
+                <h3>Korona data fuels the site.</h3>
+                <p className="muted">Inventory, pricing, and availability flow straight from POS to web.</p>
+              </div>
+              <div className="hero-logos">
+                <div className="logo-wrap">
+                  <Image src="/trap-house-logo-sm.png" alt="Trap House mascot logo" width={320} height={320} priority />
                 </div>
-                <div className="logo-tile skyline-card">
-                  <Image src="/denver-skyline-sm.png" alt="Denver skyline art" width={520} height={420} priority />
+                <div className="logo-wrap skyline">
+                  <Image src="/denver-skyline-sm.png" alt="Denver skyline art" width={440} height={240} priority />
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="section" id="inventory">
-            <div className="section-header">
-              <p className="eyebrow">Marketplace</p>
-              <h2>Live lineup from your POS — ready to sell online.</h2>
-              <p className="section-sub">
-                Products below load from the API (with featured picks as a backup). Pricing, availability, and categories
-                all stay locked to Korona.
+          <section className="section drops" id="drops">
+            <div className="section-head">
+              <p className="eyebrow">Drops & features</p>
+              <h3>Louder merchandising, built for the brand.</h3>
+            </div>
+            <div className="card-grid two">
+              {dropHighlights.map((drop) => (
+                <article className="glass-card tilt" key={drop.title}>
+                  <div className="pill outline">{drop.tag}</div>
+                  <h4>{drop.title}</h4>
+                  <p className="muted">{drop.body}</p>
+                </article>
+              ))}
+              <article className="glass-card focus">
+                <div className="pill neon">Checkout</div>
+                <h4>High-risk ready: NMI / Authorize.Net.</h4>
+                <p className="muted">
+                  PaymentCloud placement, hosted payment page, and Korona-side inventory checks keep us compliant while
+                  we sell glass, kratom, and lifestyle goods.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section className="section carry" id="lineup">
+            <div className="section-head">
+              <p className="eyebrow">What we carry</p>
+              <h3>Curated inventory, synced to Korona POS.</h3>
+            </div>
+            <div className="card-grid four">
+              {categoryTiles.map((tile) => (
+                <article className="tile-card" key={tile.title}>
+                  <h4>{tile.title}</h4>
+                  <p className="muted">{tile.body}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="section lineup">
+            <div className="section-head">
+              <p className="eyebrow">Live lineup</p>
+              <h3>Real-time inventory feed (mocked until Korona keys land).</h3>
+              <p className="muted">
+                This grid pulls from the API route. Once your Korona credentials are live, it will reflect register stock
+                and pricing.
               </p>
             </div>
             <InventoryGrid />
           </section>
 
-          <section className="section" id="connected">
-            <div className="section-header">
-              <p className="eyebrow">Korona native</p>
-              <h2>POS-grade accuracy, web-grade experience.</h2>
-              <p className="section-sub">
-                The site ships with Korona API wiring and a product model built for smoke shop SKUs — glass attributes,
-                strengths, and bundle pricing included.
-              </p>
+          <section className="section system">
+            <div className="section-head">
+              <p className="eyebrow">System flow</p>
+              <h3>How the Korona + checkout integration will ship.</h3>
             </div>
-            <div className="feature-grid">
-              {koronaHighlights.map((feature) => (
-                <article className="feature-card" key={feature.title}>
-                  <div className="pill orange">{feature.tag}</div>
-                  <h3>{feature.title}</h3>
-                  <p className="muted">{feature.body}</p>
-                </article>
+            <ul className="system-list">
+              {systemPoints.map((point) => (
+                <li key={point}>{point}</li>
               ))}
-            </div>
+            </ul>
           </section>
 
-          <section className="section" id="story">
-            <div className="section-header">
-              <p className="eyebrow">The vibe</p>
-              <h2>Denver Trap House is loud, playful, and curated.</h2>
-              <p className="section-sub">
-                We lean into color, art, and local makers while keeping the experience clean, fast, and trustworthy.
-              </p>
-            </div>
-            <div className="feature-grid">
-              {vibeCards.map((card) => (
-                <article className="feature-card" key={card.title}>
-                  <div className="pill">{card.tag}</div>
-                  <h3>{card.title}</h3>
-                  <p className="muted">{card.body}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="section" id="visit">
-            <div className="section-header">
+          <section className="section visit" id="visit">
+            <div className="section-head">
               <p className="eyebrow">Visit</p>
-              <h2>Denver storefront, coming in hot.</h2>
-              <p className="section-sub">
-                Stay tuned for the block drop, hours, and launch events. We are building a space that matches the brand
-                you see online.
-              </p>
+              <h3>Denver storefront coming online.</h3>
             </div>
-            <div className="visit-grid">
+            <div className="card-grid three">
               {visitCards.map((card) => (
                 <article className="visit-card" key={card.title}>
-                  <h3>{card.title}</h3>
+                  <h4>{card.title}</h4>
                   <p className="muted">{card.body}</p>
                   {card.cta && (
-                    <p className="tiny" style={{ marginTop: 8 }}>
-                      Email: <a href={`mailto:${card.cta}`}>{card.cta}</a>
+                    <p className="tiny">
+                      <a href={`mailto:${card.cta}`}>{card.cta}</a>
                     </p>
                   )}
                 </article>
@@ -224,13 +201,13 @@ export default function Home() {
         <footer className="footer">
           <div>
             <p className="eyebrow">Denver Trap House</p>
-            <p className="muted">Korona-synced smoke shop and marketplace built in Denver.</p>
+            <p className="muted">Built loud on purpose. Korona-synced and checkout ready.</p>
           </div>
-          <div className="chips">
-            <span>Glass</span>
-            <span>Vapes</span>
-            <span>CBD</span>
-            <span>Hookah</span>
+          <div className="pill-row">
+            <span className="pill soft">Glass</span>
+            <span className="pill soft">CBD</span>
+            <span className="pill soft">Vapes</span>
+            <span className="pill soft">Hookah</span>
           </div>
         </footer>
       </div>
