@@ -70,6 +70,8 @@ export default function Home() {
             <a href="#lineup">Lineup</a>
             <a href="#drops">Drops</a>
             <a href="#visit">Visit</a>
+            <a href="/shop">Shop</a>
+            <a href="/cart">Cart</a>
             <a href="/account">Account</a>
             <span className="pill neon">Korona synced</span>
           </div>
@@ -100,6 +102,9 @@ export default function Home() {
               </a>
               <a className="btn ghost" href="tel:3037895233">
                 Call 303.789.5233
+              </a>
+              <a className="btn" href="/shop">
+                Enter shop
               </a>
             </div>
             <div className="social-row">

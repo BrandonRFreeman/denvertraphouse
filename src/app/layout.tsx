@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Unbounded } from "next/font/google";
 import "./globals.css";
+import Providers from "@/components/Providers";
 
 const body = Space_Grotesk({
   subsets: ["latin"],
@@ -42,7 +43,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${body.variable} ${display.variable}`}>{children}</body>
+      <body className={`${body.variable} ${display.variable}`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
