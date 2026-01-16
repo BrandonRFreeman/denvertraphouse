@@ -75,6 +75,20 @@ export default function Home() {
             <a href="/account">Account</a>
             <span className="pill neon">Korona synced</span>
           </div>
+          <div className="social-row top">
+            <a href="https://www.instagram.com/denvertraphouse" aria-label="Instagram" target="_blank" rel="noreferrer">
+              <Image src="/instagram.svg" alt="Instagram" width={20} height={20} />
+            </a>
+            <a href="https://www.tiktok.com/@denvertraphouse" aria-label="TikTok" target="_blank" rel="noreferrer">
+              <Image src="/tiktok.svg" alt="TikTok" width={20} height={20} />
+            </a>
+            <a href="https://x.com/DenverTrapHouse" aria-label="X" target="_blank" rel="noreferrer">
+              <Image src="/x.svg" alt="X" width={20} height={20} />
+            </a>
+            <a href="https://www.facebook.com/denvertraphouse" aria-label="Facebook" target="_blank" rel="noreferrer">
+              <Image src="/facebook.svg" alt="Facebook" width={20} height={20} />
+            </a>
+          </div>
         </header>
 
         <main>
@@ -105,20 +119,6 @@ export default function Home() {
               </a>
               <a className="btn" href="/shop">
                 Enter shop
-              </a>
-            </div>
-            <div className="social-row">
-              <a href="https://www.instagram.com/denvertraphouse" aria-label="Instagram" target="_blank" rel="noreferrer">
-                <Image src="/instagram.svg" alt="Instagram" width={24} height={24} />
-              </a>
-              <a href="https://www.tiktok.com/@denvertraphouse" aria-label="TikTok" target="_blank" rel="noreferrer">
-                <Image src="/tiktok.svg" alt="TikTok" width={24} height={24} />
-              </a>
-              <a href="https://x.com/DenverTrapHouse" aria-label="X" target="_blank" rel="noreferrer">
-                <Image src="/x.svg" alt="X" width={24} height={24} />
-              </a>
-              <a href="https://www.facebook.com/denvertraphouse" aria-label="Facebook" target="_blank" rel="noreferrer">
-                <Image src="/facebook.svg" alt="Facebook" width={24} height={24} />
               </a>
             </div>
           </div>

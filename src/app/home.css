@@ -182,12 +182,16 @@
 }
 
 .social-row a {
-  color: var(--text);
-  opacity: 0.9;
+  color: var(--orange);
+  opacity: 0.95;
 }
 
 .social-row a:hover {
   opacity: 1;
+}
+
+.social-row.top {
+  margin-top: 0;
 }
 
 .hero-art {
