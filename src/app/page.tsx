@@ -89,15 +89,29 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              <div className="cta-row">
-                <a className="btn primary" href="#lineup">
-                  Shop the lineup
-                </a>
-                <a className="btn ghost" href="#visit">
-                  See the shop plan
-                </a>
-              </div>
+            <div className="cta-row">
+              <a className="btn primary" href="#lineup">
+                Shop the lineup
+              </a>
+              <a className="btn ghost" href="#visit">
+                See the shop plan
+              </a>
             </div>
+            <div className="social-row">
+              <a href="https://www.instagram.com/denvertraphouse" aria-label="Instagram" target="_blank" rel="noreferrer">
+                <Image src="/instagram.svg" alt="Instagram" width={24} height={24} />
+              </a>
+              <a href="https://www.tiktok.com/@denvertraphouse" aria-label="TikTok" target="_blank" rel="noreferrer">
+                <Image src="/tiktok.svg" alt="TikTok" width={24} height={24} />
+              </a>
+              <a href="https://x.com/DenverTrapHouse" aria-label="X" target="_blank" rel="noreferrer">
+                <Image src="/x.svg" alt="X" width={24} height={24} />
+              </a>
+              <a href="https://www.facebook.com/denvertraphouse" aria-label="Facebook" target="_blank" rel="noreferrer">
+                <Image src="/facebook.svg" alt="Facebook" width={24} height={24} />
+              </a>
+            </div>
+          </div>
             <div className="hero-art">
               <div className="art-card">
                 <div className="badge">Live sync</div>
