@@ -17,6 +17,14 @@ export default function CheckoutPage() {
   const [ageOk, setAgeOk] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<CheckoutResponse | null>(null);
+  const [shippingMethod, setShippingMethod] = useState<"pickup" | "shipping">("pickup");
+  const [address, setAddress] = useState({
+    name: "",
+    line1: "",
+    city: "",
+    state: "",
+    zip: "",
+  });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -114,6 +122,65 @@ export default function CheckoutPage() {
               <p className="strong">${total.toFixed(2)}</p>
             </div>
           </div>
+          <div style={{ marginTop: 12 }}>
+            <p className="muted">Fulfillment</p>
+            <div className="pill-row" style={{ marginTop: 6 }}>
+              <button
+                className={`pill ${shippingMethod === "pickup" ? "neon" : "soft"}`}
+                type="button"
+                onClick={() => setShippingMethod("pickup")}
+              >
+                Pickup
+              </button>
+              <button
+                className={`pill ${shippingMethod === "shipping" ? "neon" : "soft"}`}
+                type="button"
+                onClick={() => setShippingMethod("shipping")}
+              >
+                Shipping (21+ adult signature)
+              </button>
+            </div>
+          </div>
+
+          {shippingMethod === "shipping" && (
+            <div style={{ marginTop: 12, display: "grid", gap: 8 }}>
+              <p className="muted">Shipping address</p>
+              <input
+                className="input"
+                placeholder="Full name"
+                value={address.name}
+                onChange={(e) => setAddress({ ...address, name: e.target.value })}
+              />
+              <input
+                className="input"
+                placeholder="Address line"
+                value={address.line1}
+                onChange={(e) => setAddress({ ...address, line1: e.target.value })}
+              />
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 80px 100px", gap: 8 }}>
+                <input
+                  className="input"
+                  placeholder="City"
+                  value={address.city}
+                  onChange={(e) => setAddress({ ...address, city: e.target.value })}
+                />
+                <input
+                  className="input"
+                  placeholder="State"
+                  value={address.state}
+                  onChange={(e) => setAddress({ ...address, state: e.target.value })}
+                />
+                <input
+                  className="input"
+                  placeholder="ZIP"
+                  value={address.zip}
+                  onChange={(e) => setAddress({ ...address, zip: e.target.value })}
+                />
+              </div>
+              <p className="tiny muted">We will enforce state restrictions and require adult signature on delivery.</p>
+            </div>
+          )}
+
           <div className="cta-row" style={{ marginTop: 12 }}>
             <button className="btn primary" onClick={handleCheckout} disabled={submitting}>
               {submitting ? "Processing..." : "Place mock order"}

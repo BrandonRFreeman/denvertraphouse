@@ -514,6 +514,15 @@
   max-width: 720px;
 }
 
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
 .age-overlay {
   position: fixed;
   inset: 0;
