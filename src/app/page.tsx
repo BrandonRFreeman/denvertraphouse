@@ -1,5 +1,6 @@
 import Image from "next/image";
 import InventoryGrid from "@/components/InventoryGrid";
+import AgeGate from "@/components/AgeGate";
 import "./home.css";
 
 const heroPills = ["Glass that glows", "CBD that works", "Vapes verified", "Hookah nights"];
@@ -52,6 +53,7 @@ export default function Home() {
     <div className="page-shell">
       <div className="glow-layer" />
       <div className="grid-layer" />
+      <AgeGate />
       <div className="container">
         <header className="nav-bar">
           <div className="brand-block">
