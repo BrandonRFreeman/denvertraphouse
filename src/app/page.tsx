@@ -68,6 +68,7 @@ export default function Home() {
             <a href="#lineup">Lineup</a>
             <a href="#drops">Drops</a>
             <a href="#visit">Visit</a>
+            <a href="/account">Account</a>
             <span className="pill neon">Korona synced</span>
           </div>
         </header>
